@@ -36,7 +36,14 @@ class EnvironmentVariable:
         return self.default
 
     def __repr__(self) -> str:
-        return f"EnvironmentVariable(name={self.name}, default={self.default}, cast={self.cast.__name__}, required={self.required})"
+        return f"""
+                EnvironmentVariable(
+                    name={self.name},
+                    default={self.default},
+                    cast={self.cast.__name__},
+                    required={self.required}
+                )
+                """
 
 
 class ENVIRONMENT:

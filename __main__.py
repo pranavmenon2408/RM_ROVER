@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     @controller.listener
     def main() -> None:
-        print(f"DIRECTION: {controller.joystick.direction} | SPEED: {controller.joystick.speed}")
+        print(f"{controller.joystick.direction} | {controller.joystick.speed}")
 
 
     while True:
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     @client.controller.listener
     def main() -> None:
         client.send(
-            f"DIRECTION: {client.controller.joystick.direction} | SPEED: {client.controller.joystick.speed}"
+            f"DIRECTION: {client.controller.joystick.direction} "
+            f"| SPEED: {client.controller.joystick.speed}"
         )
 
     try:

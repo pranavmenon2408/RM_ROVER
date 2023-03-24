@@ -6,13 +6,14 @@ from .environment import config
 from .logger import Logger
 
 __all__: tuple[str, ...] = ("BluetoothClient",)
+PROTOCOL: int = socket.BTPROTO_RFCOMM  # type: ignore
 
 
 class BluetoothClient:
     connected: bool = False
 
     def __init__(self) -> None:
-        self.sock = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)  # type: ignore
+        self.sock = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, PROTOCOL)
         self.logger = Logger(name="client", file=False)
         self._connect()
         self.controller = Controller()
