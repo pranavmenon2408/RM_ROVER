@@ -41,9 +41,6 @@ class JoyStick:
         self.x_axis = round(x_axis, 1)
         self.y_axis = round(y_axis, 1)
 
-    def get_direction(self) -> str:
-        return self.direction
-
     @property
     def direction(self) -> str:
         if -self.flex_range <= self.y_axis <= self.flex_range:
