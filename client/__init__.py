@@ -34,5 +34,5 @@ class BluetoothClient:
     def send(self, data: str) -> None:
         if not self.connected:
             self._connect()
-        self.sock.send(data.encode())
+        self.sock.send(bytes(data, "utf-8"))
         self.logger.flair(f"Sent data: {data}")

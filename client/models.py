@@ -30,14 +30,19 @@ class JoyStick:
     flex_range: float = 0.3
 
     def __repr__(self) -> str:
-        return f"JoyStick(x_axis={self.x_axis}," \
-               f" y_axis={self.y_axis}," \
-               f" direction={self.direction}," \
-               f" speed={self.speed})"
+        return (
+            f"JoyStick(x_axis={self.x_axis},"
+            f" y_axis={self.y_axis},"
+            f" direction={self.direction},"
+            f" speed={self.speed})"
+        )
 
     def update(self, x_axis: float, y_axis: float) -> None:
         self.x_axis = round(x_axis, 1)
         self.y_axis = round(y_axis, 1)
+
+    def get_direction(self) -> str:
+        return self.direction
 
     @property
     def direction(self) -> str:
