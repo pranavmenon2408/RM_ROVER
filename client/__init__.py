@@ -1,5 +1,4 @@
 import socket
-import typing as t
 
 from .controller import Controller
 from .environment import config
@@ -32,8 +31,8 @@ class BluetoothClient:
         self.logger.flair("Disconnected from server")
         self.connected = False
 
-    def send(self, data: t.Any) -> None:
+    def send(self, data: str) -> None:
         if not self.connected:
             self._connect()
-        self.sock.send(bytes(data, "utf-8"))
+        self.sock.send(data.encode())
         self.logger.flair(f"Sent data: {data}")

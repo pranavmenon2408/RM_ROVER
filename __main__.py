@@ -1,28 +1,11 @@
 from client import BluetoothClient
 
 if __name__ == "__main__":
-    """
-    from client.controller import Controller
-
-    controller = Controller()
-
-
-    @controller.listener
-    def main() -> None:
-        print(f"{controller.joystick.direction} | {controller.joystick.speed}")
-
-
-    while True:
-        main()
-    """
     client = BluetoothClient()
 
     @client.controller.listener
     def main() -> None:
-        client.send(
-            f"DIRECTION: {client.controller.joystick.direction} "
-            f"| SPEED: {client.controller.joystick.speed}"
-        )
+        client.send(client.controller.joystick.direction)
 
     try:
         while True:

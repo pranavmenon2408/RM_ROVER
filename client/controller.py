@@ -30,6 +30,6 @@ class Controller:
     def listen(self) -> None:
         joystick_events = pygame.event.get(pygame.JOYAXISMOTION)
         if joystick_events:
-            self.joystick = JoyStick(
+            self.joystick.update(
                 x_axis=self._joystick.get_axis(0), y_axis=self._joystick.get_axis(1)
             )
