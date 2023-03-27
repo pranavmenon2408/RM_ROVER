@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     @client.controller.listener
     def main() -> None:
-        print(",".join(map(str, client.controller.joystick.get_mapping())))
+        print(",".join(map(str, client.controller.joystick.get_mapping(False))))
 
     try:
         while True:
