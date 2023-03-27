@@ -1,5 +1,3 @@
-import time
-
 from client import BluetoothClient
 
 if __name__ == "__main__":
@@ -7,8 +5,8 @@ if __name__ == "__main__":
 
     @client.controller.listener
     def main() -> None:
-        client.send(client.controller.joystick.direction)
-        time.sleep(0.01)
+        print(client.controller.joystick)
+
     try:
         while True:
             main()
